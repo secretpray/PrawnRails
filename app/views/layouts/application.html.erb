@@ -10,7 +10,22 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body data-controller-name='<%= controller_name %>'
+        data-controller-action='<%= action_name %>'>
+    
+    <%= turbo_stream_from [current_user, :info] %>
+    
+    <%= render 'shared/navbar' %>
+    
+    <div id="service-section">
+      <%= render 'shared/flash' %>
+    </div>
+      
+    <%= render 'shared/flash' %>
+    <div class="container">
+      <div class="row">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
