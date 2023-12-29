@@ -5,6 +5,7 @@ ruby '3.0.3'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
+gem 'devise', '~> 4.9'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'pg', '~> 1.1'
@@ -24,4 +25,3 @@ end
 group :development do
   gem 'web-console'
 end
-
